@@ -1,0 +1,33 @@
+b=[0,0]
+h=[0,0]
+m=[0,0]
+s=[0,0]
+for i in range(2):
+    a,b[i]=map(str,input().split())
+    b[i]=int(float(b[i]))
+    h[i],c1,m[i],c2,s[i]=map(str,input().split())
+    h[i],m[i],s[i]=map(int,(h[i],m[i],s[i]))
+
+if s[1]<s[0]:
+    sec=60+s[1]-s[0]
+    m[1]=m[1]-1
+else:
+    sec=s[1]-s[0]
+
+if m[1]<m[0]:
+    min=60+m[1]-m[0]
+    h[1]=h[1]-1
+else:
+    min=m[1]-m[0]
+
+if h[1]<h[0]:
+    hour=24+h[1]-h[0]
+    b[1]=b[1]-1
+else:
+    hour=h[1]-h[0]
+
+day=b[1]-b[0]
+print(f"{day} dia(s)")
+print(f"{hour} hora(s)")
+print(f"{min} minuto(s)")
+print(f"{sec} segundo(s)")
